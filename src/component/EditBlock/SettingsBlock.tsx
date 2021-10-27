@@ -76,3 +76,5 @@ export const SettingsBlock: React.FC<SettingsBlockType> = ({state, dispatch}) =>
       </div>
    )
 }
+
+
