@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.previewBlock {
+    flex: 0 1 40%;
+    height: 300px;
+    border: 1px solid tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.editBlock {
+    flex: 0 1 40%;
+    height: 300px;
+    border: 1px solid tomato;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btnWrap {
+
+}

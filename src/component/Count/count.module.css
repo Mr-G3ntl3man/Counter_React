@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+.count {
+    font-family: 'Rampart One', cursive;
+    font-size: 150px;
+    margin-bottom: 30px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+
+}
+
+.countFinal {
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: tomato;
+    transform: scale(1.2);
+}
+
+.countText {
+    font-size: 30px;
+    margin-bottom: 50px;
+    animation: blinkText 1s ease-in-out infinite;
+
+}
+
+@keyframes blinkText {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

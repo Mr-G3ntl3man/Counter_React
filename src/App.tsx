@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useReducer} from 'react';
+import s from './App.module.css';
+import {restoreState} from "./localStorage/localStorage";
+import {SettingsBlock} from "./component/EditBlock/SettingsBlock";
+import {PreviewBlock} from "./component/PreviewBlock/PreviewBlock";
+import {reducer} from "./reducer/reducer";
+import {BrowserRouter, Redirect, Route} from "react-router-dom";
+
+/*
+* Роутинг
+*
+* */
+
+export type  StateType = {
+   disabled: boolean
+   error: boolean
+   installedSettings: {
+      maxCounterValue: number
+      startCounterValue: number
+   }
+   counterSettings: {
+      initialValue: number
+      maxValue: number
+   }
+}
+
+type RestoreStateType = {
+   maxCounterValue: number
+   startCounterValue: number
+}
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+   const dateFromLocalStorage = restoreState<RestoreStateType>('Counter_Settings', {
+      maxCounterValue: 0,
+      startCounterValue: 0,
+   })
+
+   const [state, dispatch] = useReducer(reducer, {
+      error: false,
+      disabled: true,
+      installedSettings: dateFromLocalStorage,
+      counterSettings: {initialValue: 0, maxValue: 0}
+   })
+
+
+   return (
+      <BrowserRouter>
+         <div className={s.app}>
+            <Redirect from='/' to='/Settings_Block'/>
+
+            <Route path='/Settings_Block' render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
+            <Route path='/Preview_Block' render={() => <PreviewBlock state={state} dispatch={dispatch}/>}/>
+         </div>
+      </BrowserRouter>
+   )
 }
 
 export default App;

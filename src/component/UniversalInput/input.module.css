@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto+Mono:wght@400;500&family=Shadows+Into+Light&display=swap');
+
+.defaultStyle {
+    width: 200px !important;
+    height: 50px;
+    font-size: 20px !important;
+    padding: 6px 0 !important;
+
+}
+
+.inputWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.inputDesc {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.errorInput {
+    border: 1px solid rgba(255, 99, 71, 0.89) !important;
+    box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.20);
+}
+
+.customInput {
+    width: 200px;
+}
+
+@media screen and (max-width: 670px) {
+    .inputWrap {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .inputDesc {
+        margin: 0 0 20px 0;
+    }
+}
+
+
