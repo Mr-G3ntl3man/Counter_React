@@ -6,11 +6,6 @@ import {PreviewBlock} from "./component/PreviewBlock/PreviewBlock";
 import {reducer} from "./reducer/reducer";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
 
-/*
-* Роутинг
-*
-* */
-
 export type  StateType = {
    disabled: boolean
    error: boolean
@@ -48,7 +43,7 @@ function App() {
    return (
       <BrowserRouter>
          <div className={s.app}>
-            <Route path='/' exact render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
+            <Route path='/' exact render={() => <Redirect to={'/Settings_Block'}/>}/>
             <Route path='/Settings_Block' render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
             <Route path='/Preview_Block' render={() => <PreviewBlock state={state} dispatch={dispatch}/>}/>
          </div>
