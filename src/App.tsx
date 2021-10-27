@@ -1,10 +1,8 @@
 import React, {useReducer} from 'react';
-import s from './App.module.css';
 import {restoreState} from "./localStorage/localStorage";
-import {SettingsBlock} from "./component/EditBlock/SettingsBlock";
-import {PreviewBlock} from "./component/PreviewBlock/PreviewBlock";
 import {reducer} from "./reducer/reducer";
-import {BrowserRouter, Redirect, Route} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
+import {Routes} from "./Router/Routes";
 
 export type  StateType = {
    disabled: boolean
@@ -41,13 +39,9 @@ function App() {
 
 
    return (
-      <BrowserRouter>
-         <div className={s.app}>
-            <Route path='/' exact render={() => <Redirect to={'/Settings_Block'}/>}/>
-            <Route path='/Settings_Block' render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
-            <Route path='/Preview_Block' render={() => <PreviewBlock state={state} dispatch={dispatch}/>}/>
-         </div>
-      </BrowserRouter>
+      <HashRouter>
+         <Routes state={state} dispatch={dispatch}/>
+      </HashRouter>
    )
 }
 

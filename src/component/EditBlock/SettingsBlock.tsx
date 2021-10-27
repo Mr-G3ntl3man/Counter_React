@@ -4,6 +4,7 @@ import {UniversalInput} from "../UniversalInput/UniversalInput";
 import {UniversalButton} from "../UniversalButton/UniversalButton";
 import {StateType} from "../../App";
 import {ACTION_TYPE, ActionType} from "../../reducer/reducer";
+import {PATH} from "../../Router/Routes";
 
 type SettingsBlockType = {
    state: StateType
@@ -63,8 +64,8 @@ export const SettingsBlock: React.FC<SettingsBlockType> = ({state, dispatch}) =>
          <div className={s.settingsBlockBtn}>
             <UniversalButton
                navLink={true}
-               linkPath={'/Preview_Block'}
-               previousLinkPath={'/Settings_Block'}
+               linkPath={PATH.Preview_Block}
+               previousLinkPath={PATH.Settings_Block}
                disabledValue={state.installedSettings.maxCounterValue}
                count={state.installedSettings.startCounterValue}
                disabled={state.error}

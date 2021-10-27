@@ -4,6 +4,7 @@ import {Count} from "../Count/Count";
 import {UniversalButton} from "../UniversalButton/UniversalButton";
 import {ACTION_TYPE, ActionType} from "../../reducer/reducer";
 import {StateType} from "../../App";
+import {PATH} from "../../Router/Routes";
 
 type PreviewBlockType = {
    state: StateType
@@ -57,8 +58,8 @@ export const PreviewBlock: React.FC<PreviewBlockType> = ({state, dispatch}) => {
 
             <UniversalButton
                navLink={true}
-               linkPath={'/Settings_Block'}
-               previousLinkPath={'/Preview_Block'}
+               linkPath={PATH.Settings_Block}
+               previousLinkPath={PATH.Preview_Block}
                disabled={state.error}
                commonBtn={true}
                name={'set settings'}/>
