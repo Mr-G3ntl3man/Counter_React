@@ -57,7 +57,7 @@ export const PreviewBlock: React.FC<PreviewBlockType> = ({state, dispatch}) => {
 
             <UniversalButton
                navLink={true}
-               linkPath={'/Settings_Block'}
+               linkPath={'/'}
                previousLinkPath={'/Preview_Block'}
                disabled={state.error}
                commonBtn={true}

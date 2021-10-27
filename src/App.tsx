@@ -48,9 +48,7 @@ function App() {
    return (
       <BrowserRouter>
          <div className={s.app}>
-            <Redirect from='/' to='/Settings_Block'/>
-
-            <Route path='/Settings_Block' render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
+            <Route path='/' exact render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
             <Route path='/Preview_Block' render={() => <PreviewBlock state={state} dispatch={dispatch}/>}/>
          </div>
       </BrowserRouter>

@@ -1,6 +1,6 @@
 {
   "name": "counter",
-  "homepage": "https://mrgentelman.github.io/HW/",
+  "homepage": "https://mrgentelman.github.io/Counter_React/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
