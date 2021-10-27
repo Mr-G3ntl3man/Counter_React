@@ -64,7 +64,7 @@ export const SettingsBlock: React.FC<SettingsBlockType> = ({state, dispatch}) =>
             <UniversalButton
                navLink={true}
                linkPath={'/Preview_Block'}
-               previousLinkPath={'/'}
+               previousLinkPath={'/Settings_Block'}
                disabledValue={state.installedSettings.maxCounterValue}
                count={state.installedSettings.startCounterValue}
                disabled={state.error}

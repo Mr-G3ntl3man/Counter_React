@@ -49,6 +49,7 @@ function App() {
       <BrowserRouter>
          <div className={s.app}>
             <Route path='/' exact render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
+            <Route path='/Settings_Block' render={() => <SettingsBlock state={state} dispatch={dispatch}/>}/>
             <Route path='/Preview_Block' render={() => <PreviewBlock state={state} dispatch={dispatch}/>}/>
          </div>
       </BrowserRouter>
